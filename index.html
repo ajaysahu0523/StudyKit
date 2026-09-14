@@ -1,0 +1,2482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyKit - Student Utility Toolkit</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo-area">
+            <div class="logo-icon">S</div>
+
+            <div>
+                <h2>StudyKit</h2>
+                <span>Student Toolkit</span>
+            </div>
+        </div>
+
+        <nav class="navigation">
+
+            <button class="nav-item active" data-page="dashboard">
+                <span>🏠</span>
+                <span>Dashboard</span>
+            </button>
+
+            <button class="nav-item" data-page="calculator">
+                <span>🧮</span>
+                <span>Calculator</span>
+            </button>
+
+            <button class="nav-item" data-page="academic">
+                <span>🎓</span>
+                <span>Academic</span>
+            </button>
+
+            <button class="nav-item" data-page="notes">
+                <span>📝</span>
+                <span>Notes</span>
+            </button>
+
+            <button class="nav-item" data-page="focus">
+                <span>⏱️</span>
+                <span>Focus Timer</span>
+            </button>
+
+            <button class="nav-item" data-page="quiz">
+                <span>🧠</span>
+                <span>Quiz</span>
+            </button>
+
+            <button class="nav-item" data-page="expense">
+                <span>💰</span>
+                <span>Expenses</span>
+            </button>
+
+            <button class="nav-item" data-page="utilities">
+                <span>🛠️</span>
+                <span>Utilities</span>
+            </button>
+
+            <button class="nav-item" data-page="documents">
+                <span>📄</span>
+                <span>Documents</span>
+            </button>
+            <div
+    class="nav-item"
+    data-tool="imageTools"
+    onclick="openTool('imageTools')">
+
+    <span class="nav-icon">🖼️</span>
+
+    <span class="nav-text">
+        Image Tools
+    </span>
+
+</div>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button class="nav-item" id="themeButton">
+                <span id="themeIcon">🌙</span>
+                <span>Dark Mode</span>
+            </button>
+
+            <div class="version">
+                StudyKit v1.0
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <button class="menu-button" id="menuButton">
+                ☰
+            </button>
+
+            <div class="page-title">
+                <h1 id="pageTitle">Dashboard</h1>
+
+                <p id="pageSubtitle">
+                    Everything you need for smarter studying.
+                </p>
+            </div>
+
+            <div class="top-actions">
+
+                <div class="search-box">
+                    <span>🔍</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search tools..."
+                    >
+                </div>
+
+                <button
+                    class="icon-button"
+                    id="mobileThemeButton"
+                >
+                    🌙
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <section class="content">
+
+
+            <!-- ================= DASHBOARD ================= -->
+
+            <div
+                class="page active-page"
+                id="dashboardPage"
+            >
+
+                <div class="welcome-card">
+
+                    <div>
+
+                        <p class="small-label">
+                            WELCOME TO STUDYKIT
+                        </p>
+
+                        <h2>
+                            Your all-in-one
+                            <span>student toolkit.</span>
+                        </h2>
+
+                        <p>
+                            Study, calculate, organize and manage
+                            your everyday student tasks from one place.
+                        </p>
+
+                    </div>
+
+                    <div class="welcome-icon">
+                        🎓
+                    </div>
+
+                </div>
+
+
+                <!-- STATS -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            📝
+                        </div>
+
+                        <div>
+                            <h3 id="notesCount">0</h3>
+                            <p>Saved Notes</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            📚
+                        </div>
+
+                        <div>
+                            <h3>9+</h3>
+                            <p>Study Tools</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ⚡
+                        </div>
+
+                        <div>
+                            <h3>Offline</h3>
+                            <p>Ready</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            🔒
+                        </div>
+
+                        <div>
+                            <h3>Private</h3>
+                            <p>Local Data</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOOLS -->
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Study Tools</h2>
+
+                        <p>
+                            Choose a tool to get started.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="tools-grid"
+                    id="toolsGrid"
+                >
+
+                    <div
+                        class="tool-card"
+                        data-tool="calculator"
+                    >
+
+                        <div class="tool-icon calculator-icon">
+                            🧮
+                        </div>
+
+                        <div class="tool-content">
+
+                            <h3>Calculator</h3>
+
+                            <p>
+                                Perform quick mathematical calculations.
+                            </p>
+
+                            <span class="tool-link">
+                                Open Tool →
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card"
+                        data-tool="academic"
+                    >
+
+                        <div class="tool-icon academic-icon">
+                            🎓
+                        </div>
+
+                        <div class="tool-content">
+
+                            <h3>CGPA / SGPA</h3>
+
+                            <p>
+                                Calculate CGPA, SGPA and percentage.
+                            </p>
+
+                            <span class="tool-link">
+                                Open Tool →
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card"
+                        data-tool="notes"
+                    >
+
+                        <div class="tool-icon notes-icon">
+                            📝
+                        </div>
+
+                        <div class="tool-content">
+
+                            <h3>Notes</h3>
+
+                            <p>
+                                Create and manage your study notes.
+                            </p>
+
+                            <span class="tool-link">
+                                Open Tool →
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card"
+                        data-tool="focus"
+                    >
+
+                        <div class="tool-icon focus-icon">
+                            ⏱️
+                        </div>
+
+                        <div class="tool-content">
+
+                            <h3>Focus Timer</h3>
+
+                            <p>
+                                Use Pomodoro sessions for focused study.
+                            </p>
+
+                            <span class="tool-link">
+                                Open Tool →
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card"
+                        data-tool="quiz"
+                    >
+
+                        <div class="tool-icon quiz-icon">
+                            🧠
+                        </div>
+
+                        <div class="tool-content">
+
+                            <h3>Quiz Game</h3>
+
+                            <p>
+                                Test your knowledge with interactive quizzes.
+                            </p>
+
+                            <span class="tool-link">
+                                Open Tool →
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card"
+                        data-tool="expense"
+                    >
+
+                        <div class="tool-icon expense-icon">
+                            💰
+                        </div>
+
+                        <div class="tool-content">
+
+                            <h3>Expense Tracker</h3>
+
+                            <p>
+                                Track daily student expenses.
+                            </p>
+
+                            <span class="tool-link">
+                                Open Tool →
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card"
+                        data-tool="utilities"
+                    >
+
+                        <div class="tool-icon utilities-icon">
+                            🛠️
+                        </div>
+
+                        <div class="tool-content">
+
+                            <h3>Utilities</h3>
+
+                            <p>
+                                QR, password generator and converters.
+                            </p>
+
+                            <span class="tool-link">
+                                Open Tool →
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card"
+                        data-tool="documents"
+                    >
+
+                        <div class="tool-icon documents-icon">
+                            📄
+                        </div>
+
+                        <div class="tool-content">
+
+                            <h3>Documents</h3>
+
+                            <p>
+                                Scan, manage and work with documents.
+                            </p>
+
+                            <span class="tool-link">
+                                Open Tool →
+                            </span>
+
+                        </div>
+
+                    </div>
+                    <div
+                        class="tool-card"
+                        data-tool="imageTools"
+                        onclick="openTool('imageTools')">
+
+                        <div class="tool-card-icon">
+                            🖼️
+                        </div>
+
+                        <h3>
+                            Image Tools
+                        </h3>
+                        <p>
+                            compress, resize and manage your images.
+                        </p>
+
+                        <div class="tool-card-link">
+                            open Tool ->
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= TOOL PAGE ================= -->
+
+            <div
+                class="page"
+                id="toolPage"
+            >
+
+                <div class="tool-page-header">
+
+                    <button
+                        class="back-button"
+                        id="backButton"
+                    >
+                        ← Back to Dashboard
+                    </button>
+
+                    <div
+                        class="large-tool-icon"
+                        id="largeToolIcon"
+                    >
+                        🧮
+                    </div>
+
+                    <h2 id="toolPageTitle">
+                        Calculator
+                    </h2>
+
+                    <p id="toolPageDescription">
+                        Calculator
+                    </p>
+
+                </div>
+
+
+                <!-- ================= CALCULATOR ================= -->
+
+                <div
+                    class="actual-tool"
+                    id="calculatorTool"
+                >
+
+                    <div class="calculator">
+
+                        <input
+                            type="text"
+                            id="calcDisplay"
+                            class="calc-display"
+                            value="0"
+                            readonly
+                        >
+
+                        <div class="calculator-buttons">
+
+                            <button
+                                class="calc-btn danger"
+                                data-calc="clear"
+                            >
+                                AC
+                            </button>
+
+                            <button
+                                class="calc-btn"
+                                data-calc="delete"
+                            >
+                                DEL
+                            </button>
+
+                            <button
+                                class="calc-btn"
+                                data-calc="%"
+                            >
+                                %
+                            </button>
+
+                            <button
+                                class="calc-btn operator"
+                                data-calc="/"
+                            >
+                                ÷
+                            </button>
+
+
+                            <button class="calc-btn" data-calc="7">
+                                7
+                            </button>
+
+                            <button class="calc-btn" data-calc="8">
+                                8
+                            </button>
+
+                            <button class="calc-btn" data-calc="9">
+                                9
+                            </button>
+
+                            <button
+                                class="calc-btn operator"
+                                data-calc="*"
+                            >
+                                ×
+                            </button>
+
+
+                            <button class="calc-btn" data-calc="4">
+                                4
+                            </button>
+
+                            <button class="calc-btn" data-calc="5">
+                                5
+                            </button>
+
+                            <button class="calc-btn" data-calc="6">
+                                6
+                            </button>
+
+                            <button
+                                class="calc-btn operator"
+                                data-calc="-"
+                            >
+                                −
+                            </button>
+
+
+                            <button class="calc-btn" data-calc="1">
+                                1
+                            </button>
+
+                            <button class="calc-btn" data-calc="2">
+                                2
+                            </button>
+
+                            <button class="calc-btn" data-calc="3">
+                                3
+                            </button>
+
+                            <button
+                                class="calc-btn operator"
+                                data-calc="+"
+                            >
+                                +
+                            </button>
+
+
+                            <button
+                                class="calc-btn zero"
+                                data-calc="0"
+                            >
+                                0
+                            </button>
+
+                            <button
+                                class="calc-btn"
+                                data-calc="."
+                            >
+                                .
+                            </button>
+
+                            <button
+                                class="calc-btn equal"
+                                data-calc="="
+                            >
+                                =
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= ACADEMIC ================= -->
+
+                <div
+                    class="actual-tool"
+                    id="academicTool"
+                >
+
+                    <div class="academic-container">
+
+                        <div class="academic-tabs">
+
+                            <button
+                                class="academic-tab active"
+                                data-academic="sgpa"
+                            >
+                                SGPA Calculator
+                            </button>
+
+                            <button
+                                class="academic-tab"
+                                data-academic="cgpa"
+                            >
+                                CGPA Calculator
+                            </button>
+
+                        </div>
+
+
+                        <!-- SGPA -->
+
+                        <div
+                            id="sgpaSection"
+                            class="academic-section"
+                        >
+
+                            <div class="section-heading">
+
+                                <h3>SGPA Calculator</h3>
+
+                                <p>
+                                    Enter subject credits and grade points.
+                                </p>
+
+                            </div>
+
+
+                            <div
+                                id="subjectRows"
+                                class="subject-rows"
+                            >
+
+                            </div>
+
+
+                            <div class="academic-actions">
+
+                                <button
+                                    class="secondary-button"
+                                    id="addSubject"
+                                >
+                                    + Add Subject
+                                </button>
+
+                                <button
+                                    class="primary-button"
+                                    id="calculateSGPA"
+                                >
+                                    Calculate SGPA
+                                </button>
+
+                            </div>
+
+
+                            <div
+                                class="result-card"
+                                id="sgpaResult"
+                            >
+
+                                <span>SGPA</span>
+
+                                <strong id="sgpaValue">
+                                    0.00
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CGPA -->
+
+                        <div
+                            id="cgpaSection"
+                            class="academic-section hidden"
+                        >
+
+                            <div class="section-heading">
+
+                                <h3>CGPA Calculator</h3>
+
+                                <p>
+                                    Enter your semester SGPA values.
+                                </p>
+
+                            </div>
+
+
+                            <div
+                                id="semesterRows"
+                                class="subject-rows"
+                            >
+
+                            </div>
+
+
+                            <div class="academic-actions">
+
+                                <button
+                                    class="secondary-button"
+                                    id="addSemester"
+                                >
+                                    + Add Semester
+                                </button>
+
+                                <button
+                                    class="primary-button"
+                                    id="calculateCGPA"
+                                >
+                                    Calculate CGPA
+                                </button>
+
+                            </div>
+
+
+                            <div
+                                class="result-card"
+                                id="cgpaResult"
+                            >
+
+                                <span>CGPA</span>
+
+                                <strong id="cgpaValue">
+                                    0.00
+                                </strong>
+
+                                <small id="percentageValue">
+                                    Percentage: 0.00%
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= NOTES ================= -->
+
+                <div
+                    class="actual-tool"
+                    id="notesTool"
+                >
+
+                    <div class="notes-container">
+
+                        <div class="notes-top">
+
+                            <div>
+
+                                <h3>My Notes</h3>
+
+                                <p>
+                                    Your notes are saved locally on this device.
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="primary-button"
+                                id="newNoteButton"
+                            >
+                                + New Note
+                            </button>
+
+                        </div>
+
+
+                        <div class="notes-search">
+
+                            <span>🔍</span>
+
+                            <input
+                                type="text"
+                                id="notesSearch"
+                                placeholder="Search your notes..."
+                            >
+
+                        </div>
+
+
+                        <div
+                            id="notesList"
+                            class="notes-list"
+                        >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- NOTE EDITOR MODAL -->
+
+                    <div
+                        class="modal"
+                        id="noteModal"
+                    >
+
+                        <div class="modal-box">
+
+                            <div class="modal-header">
+
+                                <h3 id="noteModalTitle">
+                                    New Note
+                                </h3>
+
+                                <button
+                                    class="modal-close"
+                                    id="closeNoteModal"
+                                >
+                                    ×
+                                </button>
+
+                            </div>
+
+
+                            <input
+                                type="text"
+                                id="noteTitle"
+                                class="form-input"
+                                placeholder="Note title"
+                            >
+
+
+                            <textarea
+                                id="noteContent"
+                                class="note-textarea"
+                                placeholder="Write your note..."
+                            ></textarea>
+
+
+                            <div class="modal-actions">
+
+                                <button
+                                    class="secondary-button"
+                                    id="cancelNote"
+                                >
+                                    Cancel
+                                </button>
+
+                                <button
+                                    class="primary-button"
+                                    id="saveNote"
+                                >
+                                    Save Note
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ================= FOCUS TIMER ================= -->
+
+<div
+    class="actual-tool"
+    id="focusTool"
+>
+
+    <div class="focus-container">
+
+        <div class="focus-mode-tabs">
+
+            <button
+                class="focus-mode active"
+                data-mode="focus"
+            >
+                Focus
+            </button>
+
+            <button
+                class="focus-mode"
+                data-mode="short"
+            >
+                Short Break
+            </button>
+
+            <button
+                class="focus-mode"
+                data-mode="long"
+            >
+                Long Break
+            </button>
+
+        </div>
+
+
+        <div class="timer-card">
+
+            <div class="timer-label" id="timerLabel">
+                Focus Session
+            </div>
+
+            <div
+                class="timer-display"
+                id="timerDisplay"
+            >
+                25:00
+            </div>
+
+            <div class="timer-progress">
+
+                <div
+                    class="timer-progress-bar"
+                    id="timerProgressBar"
+                ></div>
+
+            </div>
+
+
+            <div class="timer-controls">
+
+                <button
+                    class="primary-button"
+                    id="timerStart"
+                >
+                    ▶ Start
+                </button>
+
+                <button
+                    class="secondary-button"
+                    id="timerPause"
+                >
+                    ⏸ Pause
+                </button>
+
+                <button
+                    class="secondary-button"
+                    id="timerReset"
+                >
+                    ↻ Reset
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="session-info">
+
+            <div class="session-stat">
+
+                <span>🍅</span>
+
+                <div>
+                    <strong id="completedSessions">
+                        0
+                    </strong>
+
+                    <small>
+                        Completed Sessions
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="session-stat">
+
+                <span>⏱️</span>
+
+                <div>
+                    <strong id="totalFocusMinutes">
+                        0
+                    </strong>
+
+                    <small>
+                        Focus Minutes
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= QUIZ GAME ================= -->
+
+<div
+    class="actual-tool"
+    id="quizTool"
+>
+
+    <div class="quiz-container">
+
+        <!-- QUIZ START -->
+
+        <div
+            class="quiz-start"
+            id="quizStart"
+        >
+
+            <div class="quiz-hero-icon">
+                🧠
+            </div>
+
+            <h2>
+                Test Your Knowledge
+            </h2>
+
+            <p>
+                Answer questions and see how much
+                you know about Computer Science.
+            </p>
+
+            <div class="quiz-info">
+
+                <div>
+                    <strong>10</strong>
+                    <span>Questions</span>
+                </div>
+
+                <div>
+                    <strong>4</strong>
+                    <span>Options</span>
+                </div>
+
+                <div>
+                    <strong>10</strong>
+                    <span>Points</span>
+                </div>
+
+            </div>
+
+            <button
+                class="primary-button"
+                id="startQuiz"
+            >
+                🚀 Start Quiz
+            </button>
+
+        </div>
+
+
+        <!-- QUIZ QUESTION -->
+
+        <div
+            class="quiz-question-area"
+            id="quizQuestionArea"
+        >
+
+            <div class="quiz-top">
+
+                <span id="quizQuestionNumber">
+                    Question 1 of 10
+                </span>
+
+                <span id="quizScore">
+                    Score: 0
+                </span>
+
+            </div>
+
+
+            <div class="quiz-progress">
+
+                <div
+                    class="quiz-progress-bar"
+                    id="quizProgressBar"
+                ></div>
+
+            </div>
+
+
+            <div class="question-card">
+
+                <h2 id="questionText">
+                    Question goes here
+                </h2>
+
+                <div
+                    class="quiz-options"
+                    id="quizOptions"
+                >
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="primary-button quiz-next"
+                id="nextQuestion"
+            >
+                Next Question →
+            </button>
+
+        </div>
+
+
+        <!-- QUIZ RESULT -->
+
+        <div
+            class="quiz-result"
+            id="quizResult"
+        >
+
+            <div class="result-emoji">
+                🏆
+            </div>
+
+            <h2>
+                Quiz Completed!
+            </h2>
+
+            <p>
+                Great job! Here is your final score.
+            </p>
+
+            <div class="final-score">
+
+                <strong id="finalScore">
+                    0/10
+                </strong>
+
+                <span id="finalMessage">
+                    Keep practicing!
+                </span>
+
+            </div>
+
+            <button
+                class="primary-button"
+                id="restartQuiz"
+            >
+                🔄 Play Again
+            </button>
+
+        </div>
+
+    </div>
+
+</div>          
+                <!-- ================= EXPENSE TRACKER ================= -->
+
+<div
+    id="expenseTool"
+    class="actual-tool"
+    style="display: none;"
+>
+
+    <div class="expense-container">
+
+        <!-- ADD EXPENSE -->
+        <div class="expense-card">
+
+            <div class="expense-card-header">
+                <div>
+                    <h2>Add Expense</h2>
+                    <p>Record your daily spending.</p>
+                </div>
+            </div>
+
+            <div class="expense-form">
+
+                <div class="form-group">
+                    <label for="expenseTitle">
+                        Expense Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="expenseTitle"
+                        class="form-input"
+                        placeholder="e.g. College Bus"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="expenseAmount">
+                        Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="expenseAmount"
+                        class="form-input"
+                        placeholder="e.g. 100"
+                        min="0"
+                        step="0.01"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="expenseCategory">
+                        Category
+                    </label>
+
+                    <select
+                        id="expenseCategory"
+                        class="form-input"
+                    >
+                        <option value="Food">🍔 Food</option>
+                        <option value="Travel">🚌 Travel</option>
+                        <option value="Education">📚 Education</option>
+                        <option value="Shopping">🛍️ Shopping</option>
+                        <option value="Bills">💡 Bills</option>
+                        <option value="Entertainment">🎮 Entertainment</option>
+                        <option value="Other">📦 Other</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="expenseDate">
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="expenseDate"
+                        class="form-input"
+                    >
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="addExpenseButton"
+                class="primary-button expense-add-button"
+            >
+                ➕ Add Expense
+            </button>
+
+        </div>
+
+
+        <!-- SUMMARY -->
+        <div class="expense-summary-grid">
+
+            <div class="expense-summary-card">
+                <div class="summary-icon">💰</div>
+
+                <div>
+                    <span>Total Spent</span>
+                    <strong id="totalExpense">
+                        ₹0.00
+                    </strong>
+                </div>
+            </div>
+
+
+            <div class="expense-summary-card">
+                <div class="summary-icon">🧾</div>
+
+                <div>
+                    <span>Total Entries</span>
+                    <strong id="expenseCount">
+                        0
+                    </strong>
+                </div>
+            </div>
+
+
+            <div class="expense-summary-card">
+                <div class="summary-icon">📊</div>
+
+                <div>
+                    <span>Average Expense</span>
+                    <strong id="averageExpense">
+                        ₹0.00
+                    </strong>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- EXPENSE LIST -->
+        <div class="expense-card">
+
+            <div class="expense-list-header">
+
+                <div>
+                    <h2>Expense History</h2>
+                    <p>Your recent expenses.</p>
+                </div>
+
+                <button
+                    type="button"
+                    id="clearExpensesButton"
+                    class="secondary-button"
+                >
+                    🗑️ Clear All
+                </button>
+
+            </div>
+
+
+            <div
+                id="expenseList"
+                class="expense-list"
+            >
+
+                <!-- Expenses will appear here -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+                <!-- ================= UTILITIES ================= -->
+
+<div
+    id="utilitiesTool"
+    class="actual-tool"
+    style="display: none;"
+>
+
+    <div class="utilities-container">
+
+        <!-- ================= UNIT CONVERTER ================= -->
+
+        <div class="utility-card">
+
+            <div class="utility-header">
+
+                <div>
+                    <h2>Unit Converter</h2>
+                    <p>Convert common units quickly.</p>
+                </div>
+
+                <div class="utility-icon">
+                    📏
+                </div>
+
+            </div>
+
+
+            <div class="converter-tabs">
+
+                <button
+                    type="button"
+                    class="converter-tab active"
+                    data-converter="length"
+                >
+                    Length
+                </button>
+
+                <button
+                    type="button"
+                    class="converter-tab"
+                    data-converter="weight"
+                >
+                    Weight
+                </button>
+
+                <button
+                    type="button"
+                    class="converter-tab"
+                    data-converter="temperature"
+                >
+                    Temperature
+                </button>
+
+                <button
+                    type="button"
+                    class="converter-tab"
+                    data-converter="data"
+                >
+                    Data
+                </button>
+
+            </div>
+
+
+            <div class="converter-form">
+
+                <div class="form-group">
+
+                    <label for="converterInput">
+                        Value
+                    </label>
+
+                    <input
+                        type="number"
+                        id="converterInput"
+                        class="form-input"
+                        placeholder="Enter value"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="converterFrom">
+                        From
+                    </label>
+
+                    <select
+                        id="converterFrom"
+                        class="form-input"
+                    ></select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="converterTo">
+                        To
+                    </label>
+
+                    <select
+                        id="converterTo"
+                        class="form-input"
+                    ></select>
+
+                </div>
+
+            </div>
+
+
+            <div class="converter-result">
+
+                <span>Result</span>
+
+                <strong id="converterResult">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= PASSWORD GENERATOR ================= -->
+
+        <div class="utility-card">
+
+            <div class="utility-header">
+
+                <div>
+                    <h2>Password Generator</h2>
+                    <p>Create a strong random password.</p>
+                </div>
+
+                <div class="utility-icon">
+                    🔐
+                </div>
+
+            </div>
+
+
+            <div class="password-output">
+
+                <input
+                    type="text"
+                    id="generatedPassword"
+                    class="form-input"
+                    placeholder="Your password will appear here"
+                    readonly
+                >
+
+                <button
+                    type="button"
+                    id="copyPasswordButton"
+                    class="secondary-button"
+                >
+                    📋 Copy
+                </button>
+
+            </div>
+
+
+            <div class="password-options">
+
+                <div class="form-group">
+
+                    <label for="passwordLength">
+                        Password Length
+                    </label>
+
+                    <input
+                        type="number"
+                        id="passwordLength"
+                        class="form-input"
+                        min="6"
+                        max="32"
+                        value="12"
+                    >
+
+                </div>
+
+
+                <label class="checkbox-option">
+
+                    <input
+                        type="checkbox"
+                        id="includeUppercase"
+                        checked
+                    >
+
+                    Uppercase
+
+                </label>
+
+
+                <label class="checkbox-option">
+
+                    <input
+                        type="checkbox"
+                        id="includeNumbers"
+                        checked
+                    >
+
+                    Numbers
+
+                </label>
+
+
+                <label class="checkbox-option">
+
+                    <input
+                        type="checkbox"
+                        id="includeSymbols"
+                        checked
+                    >
+
+                    Symbols
+
+                </label>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="generatePasswordButton"
+                class="primary-button"
+            >
+                🔄 Generate Password
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+                <!-- ================= DOCUMENT SCANNER ================= -->
+
+<div id="documentsTool" class="actual-tool" style="display:none;">
+
+    <div class="documents-container">
+
+        <div class="document-card">
+
+            <div class="document-header">
+                <div>
+                    <h2>📷 Document Scanner</h2>
+                    <p>Scan documents using your camera</p>
+                </div>
+            </div>
+
+            <!-- Camera Area -->
+            <div class="scanner-area">
+
+                <video
+                    id="scannerVideo"
+                    autoplay
+                    playsinline
+                    muted>
+                </video>
+
+                <canvas id="scannerCanvas"></canvas>
+
+                <div id="scannerPlaceholder" class="scanner-placeholder">
+                    <div class="scanner-icon">📷</div>
+                    <h3>Camera Ready</h3>
+                    <p>Click Start Camera to begin scanning</p>
+                </div>
+
+            </div>
+
+            <!-- Camera Controls -->
+            <div class="scanner-controls">
+
+                <button
+                    id="startScannerButton"
+                    class="primary-button">
+                    📷 Start Camera
+                </button>
+
+                <button
+                    id="captureDocumentButton"
+                    class="primary-button"
+                    style="display:none;">
+                    📸 Capture
+                </button>
+
+                <button
+                    id="stopScannerButton"
+                    class="secondary-button"
+                    style="display:none;">
+                    ⏹ Stop Camera
+                </button>
+
+            </div>
+
+            <!-- Preview -->
+            <div
+                id="documentPreview"
+                class="document-preview"
+                style="display:none;">
+
+                <h3>📄 Scan Preview</h3>
+
+                <img
+                    id="scannedDocumentImage"
+                    alt="Scanned Document">
+
+                <div class="preview-controls">
+
+                    <button
+                        id="downloadScanButton"
+                        class="primary-button">
+                        📥 Download
+                    </button>
+
+                    <button
+                        id="rescanButton"
+                        class="secondary-button">
+                        🔄 Scan Again
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- ================= IMAGE TO PDF ================= -->
+
+<div class="document-card pdf-tool-card">
+    <!-- ================= PDF VIEWER ================= -->
+
+<div class="document-card pdf-viewer-card">
+
+    <div class="document-header">
+        <div>
+            <h2>📖 PDF Viewer</h2>
+            <p>Open and preview PDF documents</p>
+        </div>
+    </div>
+
+    <div class="pdf-viewer-upload">
+
+        <input
+            type="file"
+            id="pdfViewerInput"
+            accept="application/pdf"
+            class="hidden-file-input"
+        >
+
+        <div class="pdf-viewer-icon">
+            📄
+        </div>
+
+        <h3>Open PDF</h3>
+
+        <p>
+            Select a PDF file from your device
+        </p>
+
+        <label
+            for="pdfViewerInput"
+            id="openPdfButton"
+            class="primary-button"
+            style="display:inline-flex; align-items:center; justify-content:center;">
+            📂 Choose PDF
+        </label>
+
+    </div>
+
+
+    <!-- PDF Information -->
+
+    <div
+        id="pdfViewerInfo"
+        class="pdf-viewer-info"
+        style="display:none;">
+
+        <div>
+            <strong id="pdfViewerFileName">
+                Document.pdf
+            </strong>
+
+            <span id="pdfViewerPageInfo">
+                0 pages
+            </span>
+        </div>
+
+        <button
+            id="closePdfViewerButton"
+            class="secondary-button">
+            ✕ Close
+        </button>
+
+    </div>
+
+
+    <!-- PDF Controls -->
+
+    <div
+        id="pdfViewerControls"
+        class="pdf-viewer-controls"
+        style="display:none;">
+
+        <button
+            id="previousPdfPageButton"
+            class="secondary-button">
+            ◀ Previous
+        </button>
+
+        <span id="currentPdfPage">
+            Page 1
+        </span>
+
+        <button
+            id="nextPdfPageButton"
+            class="secondary-button">
+            Next ▶
+        </button>
+
+    </div>
+
+
+    <!-- PDF Canvas -->
+
+    <div
+        id="pdfViewerContainer"
+        class="pdf-viewer-container"
+        style="display:none;">
+
+        <canvas id="pdfViewerCanvas"></canvas>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PDF TO IMAGES ================= -->
+
+<div class="document-card pdf-images-card">
+
+    <div class="document-header">
+        <div>
+            <h2>🖼️ PDF to Images</h2>
+            <p>Convert PDF pages into JPG images</p>
+        </div>
+    </div>
+
+
+    <div class="pdf-images-upload">
+
+        <input
+            type="file"
+            id="pdfToImagesInput"
+            accept="application/pdf"
+            class="hidden-file-input"
+        >
+
+        <div class="pdf-viewer-icon">
+            🖼️
+        </div>
+
+        <h3>Convert PDF</h3>
+
+        <p>
+            Select a PDF and convert its pages into images
+        </p>
+
+        <label
+            for="pdfToImagesInput"
+            id="selectPdfForImagesButton"
+            class="primary-button"
+            style="display:inline-flex: align-item:center: justify-content:center:">
+            📂 Select PDF
+        </label>
+
+    </div>
+
+
+    <!-- PDF to Images Results -->
+
+    <div
+        id="pdfToImagesResult"
+        style="display:none;">
+
+        <div class="pdf-section-heading">
+
+            <div>
+
+                <h3>Converted Pages</h3>
+
+                <p id="convertedPdfPageCount">
+                    0 pages
+                </p>
+
+            </div>
+
+            <button
+                id="downloadAllPdfImagesButton"
+                class="primary-button">
+                📥 Download All
+            </button>
+
+        </div>
+
+
+        <div
+            id="convertedPdfImages"
+            class="converted-pdf-images">
+        </div>
+
+    </div>
+
+</div>
+
+    <div class="document-header">
+        <div>
+            <h2>📄 Image to PDF</h2>
+            <p>Convert multiple images into a single PDF document</p>
+        </div>
+    </div>
+    <!-- ================= DOCUMENT HISTORY ================= -->
+
+<div class="document-card document-history-card">
+
+    <div class="document-header">
+
+        <div>
+            <h2>🕘 Document History</h2>
+            <p>Your recently scanned and created documents</p>
+        </div>
+
+        <button
+            id="clearDocumentHistoryButton"
+            class="secondary-button">
+            🗑️ Clear History
+        </button>
+
+    </div>
+
+
+    <div
+        id="documentHistoryList"
+        class="document-history-list">
+
+        <div class="document-history-empty">
+
+            <div class="history-empty-icon">
+                📂
+            </div>
+
+            <h3>No documents yet</h3>
+
+            <p>
+                Your recent scans and PDF activity
+                will appear here.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- ================= IMAGE TOOLS ================= -->
+
+<div id="imageToolsTool" class="actual-tool" style="display:none;">
+
+    <div class="image-tools-container">
+
+        <!-- ================= IMAGE COMPRESSOR ================= -->
+
+        <div class="document-card image-tool-card">
+
+            <div class="document-header">
+                <div>
+                    <h2>🗜️ Image Compressor</h2>
+                    <p>Reduce image size while maintaining good quality</p>
+                </div>
+            </div>
+
+            <div class="image-upload-area">
+
+                <input
+                    type="file"
+                    id="compressImageInput"
+                    accept="image/*"
+                    class="hidden-file-input"
+                >
+
+                <div class="image-tool-icon">
+                    🖼️
+                </div>
+
+                <h3>Select Image</h3>
+
+                <p>
+                    JPG, PNG or WebP images supported
+                </p>
+
+                <label
+                    for="compressImageInput"
+                    class="primary-button image-select-label">
+                    📁 Choose Image
+                </label>
+
+            </div>
+
+
+            <!-- Compressor Preview -->
+
+            <div
+                id="compressorWorkspace"
+                class="image-workspace"
+                style="display:none;">
+
+                <div class="image-preview-grid">
+
+                    <div class="image-preview-box">
+
+                        <h4>Original</h4>
+
+                        <img
+                            id="originalCompressImage"
+                            alt="Original Image"
+                        >
+
+                        <p id="originalImageSize">
+                            Size: 0 KB
+                        </p>
+
+                    </div>
+
+
+                    <div class="image-preview-box">
+
+                        <h4>Compressed</h4>
+
+                        <img
+                            id="compressedImagePreview"
+                            alt="Compressed Image"
+                        >
+
+                        <p id="compressedImageSize">
+                            Size: 0 KB
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Quality -->
+
+                <div class="image-setting">
+
+                    <label for="compressionQuality">
+
+                        Compression Quality:
+                        <strong id="compressionQualityValue">
+                            80%
+                        </strong>
+
+                    </label>
+
+                    <input
+                        type="range"
+                        id="compressionQuality"
+                        min="10"
+                        max="100"
+                        value="80"
+                    >
+
+                </div>
+
+
+                <div class="image-action-row">
+
+                    <button
+                        id="compressImageButton"
+                        class="primary-button">
+                        🗜️ Compress Image
+                    </button>
+
+                    <button
+                        id="downloadCompressedImageButton"
+                        class="primary-button"
+                        style="display:none;">
+                        📥 Download
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= IMAGE RESIZER ================= -->
+
+        <div class="document-card image-tool-card">
+
+            <div class="document-header">
+
+                <div>
+                    <h2>📐 Image Resizer</h2>
+                    <p>Resize images to your required dimensions</p>
+                </div>
+
+            </div>
+
+
+            <div class="image-upload-area">
+
+                <input
+                    type="file"
+                    id="resizeImageInput"
+                    accept="image/*"
+                    class="hidden-file-input"
+                >
+
+                <div class="image-tool-icon">
+                    📐
+                </div>
+
+                <h3>Select Image</h3>
+
+                <p>
+                    Upload an image to resize
+                </p>
+
+                <label
+                    for="resizeImageInput"
+                    class="primary-button image-select-label">
+                    📁 Choose Image
+                </label>
+
+            </div>
+
+
+            <!-- Resizer Workspace -->
+
+            <div
+                id="resizerWorkspace"
+                class="image-workspace"
+                style="display:none;">
+
+                <div class="resize-original-preview">
+
+                    <img
+                        id="resizeImagePreview"
+                        alt="Image Preview"
+                    >
+
+                </div>
+
+
+                <div class="resize-dimensions">
+
+                    <div class="image-setting">
+
+                        <label for="resizeWidth">
+                            Width (px)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="resizeWidth"
+                            min="1"
+                            placeholder="Width"
+                        >
+
+                    </div>
+
+
+                    <div class="image-setting">
+
+                        <label for="resizeHeight">
+                            Height (px)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="resizeHeight"
+                            min="1"
+                            placeholder="Height"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <label class="aspect-ratio-option">
+
+                    <input
+                        type="checkbox"
+                        id="maintainAspectRatio"
+                        checked
+                    >
+
+                    Maintain aspect ratio
+
+                </label>
+
+
+                <div class="image-setting">
+
+                    <label for="resizeFormat">
+                        Output Format
+                    </label>
+
+                    <select id="resizeFormat">
+
+                        <option value="image/jpeg">
+                            JPG
+                        </option>
+
+                        <option value="image/png">
+                            PNG
+                        </option>
+
+                        <option value="image/webp">
+                            WebP
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="image-action-row">
+
+                    <button
+                        id="resizeImageButton"
+                        class="primary-button">
+                        📐 Resize Image
+                    </button>
+
+                    <button
+                        id="downloadResizedImageButton"
+                        class="primary-button"
+                        style="display:none;">
+                        📥 Download
+                    </button>
+
+                </div>
+
+
+                <canvas
+                    id="resizeCanvas"
+                    style="display:none;">
+                </canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+    <!-- Upload Area -->
+    <div class="pdf-upload-area">
+
+        <input
+            type="file"
+            id="pdfImageInput"
+            accept="image/*"
+            multiple
+            hidden
+        >
+
+        <div class="pdf-upload-icon">
+            🖼️
+        </div>
+
+        <h3>Add Images</h3>
+
+        <p>
+            Select one or multiple images to create your PDF
+        </p>
+
+        <button
+            id="selectPdfImagesButton"
+            class="primary-button">
+            📁 Select Images
+        </button>
+
+        <button
+            id="addCurrentScanButton"
+            class="secondary-button">
+            📷 Add Current Scan
+        </button>
+
+    </div>
+
+
+    <!-- Selected Images -->
+
+    <div
+        id="pdfImagesSection"
+        class="pdf-images-section"
+        style="display:none;">
+
+        <div class="pdf-section-heading">
+
+            <div>
+                <h3>PDF Pages</h3>
+
+                <p id="pdfPageCount">
+                    0 pages selected
+                </p>
+            </div>
+
+            <button
+                id="clearPdfImagesButton"
+                class="secondary-button">
+                🗑️ Clear All
+            </button>
+
+        </div>
+
+
+        <div
+            id="pdfImagesPreview"
+            class="pdf-images-preview">
+        </div>
+
+
+        <!-- PDF Settings -->
+
+        <div class="pdf-settings">
+
+            <div class="pdf-setting-group">
+
+                <label for="pdfFileName">
+                    PDF Name
+                </label>
+
+                <input
+                    type="text"
+                    id="pdfFileName"
+                    value="StudyKit-Document"
+                    placeholder="Enter PDF name"
+                >
+
+            </div>
+
+
+            <div class="pdf-setting-group">
+
+                <label for="pdfPageSize">
+                    Page Size
+                </label>
+
+                <select id="pdfPageSize">
+
+                    <option value="a4">
+                        A4
+                    </option>
+
+                    <option value="letter">
+                        Letter
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="pdf-setting-group">
+
+                <label for="pdfOrientation">
+                    Orientation
+                </label>
+
+                <select id="pdfOrientation">
+
+                    <option value="portrait">
+                        Portrait
+                    </option>
+
+                    <option value="landscape">
+                        Landscape
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="generatePdfButton"
+            class="primary-button generate-pdf-button">
+
+            📄 Generate & Download PDF
+
+        </button>
+
+    </div>
+
+</div>
+
+    </div>
+
+</div>
+                <!-- OTHER TOOLS -->
+
+                <div
+                    class="coming-soon"
+                    id="comingSoon"
+                >
+
+                    <div class="coming-icon">
+                        🚀
+                    </div>
+
+                    <h2>
+                        Coming in Next Phase
+                    </h2>
+
+                    <p id="comingDescription">
+                        More useful tools are coming soon.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SEARCH RESULT -->
+
+            <div
+                class="no-results"
+                id="noResults"
+            >
+
+                <div>🔍</div>
+
+                <h2>No tools found</h2>
+
+                <p>
+                    Try searching for another tool.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+    <script src="js/timer.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/expense.js"></script>
+    <script src="js/utilities.js"></script>
+    <script src="js/document-scanner.js"></script>
+    <script src="js/pdf-tools.js"></script>
+    <script src="js/pdf-viewer.js"></script>
+    <script src="js/document-history.js"></script>
+    <script src="js/image-tools.js"></script>
+
+    <script src="app.js"></script>
+    
+
+</body>
+</html>
